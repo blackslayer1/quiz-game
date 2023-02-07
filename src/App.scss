@@ -1,0 +1,130 @@
+@mixin button{
+  background: cyan;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  width: 20%;
+  color: white;
+  font-weight: 600;
+}
+
+body{
+  background: #fff4f4;
+}
+
+button{
+  cursor:pointer;
+}
+
+.container{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background: rgb(2, 168, 168);
+  width: 50%;
+  height: 400px;
+  border-radius: 5px;
+  .startQuiz{
+    text-align: center;
+    button{
+      @include button;
+      transition: all 0.4;
+      position: relative;
+      top: 120px;
+      width: 30%;
+      &:hover{
+        background: rgb(118, 245, 245);
+      }
+    }
+    h2{
+      color: white;
+    }
+  }
+  .content{
+    visibility: hidden;
+    position: absolute;
+    bottom: 60px;
+    width: 100%;
+    span{
+      position: relative;
+      background:cyan;
+      padding: 10px;
+      left: -10px;
+      width: 25px;
+      transition: all 0.4s;
+    }
+    h2{
+      position: relative;
+      left: 140px;
+      color: white;
+    }
+    ul{
+      list-style: none;
+      li{
+        background: white;
+        padding: 10px;
+        margin-bottom: 10px;
+        margin-right: 40px;
+        cursor: pointer;
+        &:hover{
+          span{
+            background: rgb(118, 245, 245);
+          }
+        }
+      }
+    }
+  }
+}
+
+.buttons{
+  position: relative;
+  top: 30px;
+  left: 20px;
+  button{
+    @include button;
+  }
+  .nextButton{
+    opacity: 50%;
+    pointer-events: none;
+  }
+  .endQuiz{
+    margin-right: 370px;
+  }
+}
+
+.progressbar {
+  position: relative;
+  max-width: 500px;
+  width: 12%;
+  height: 30px;
+  background: #274545;
+  overflow: hidden;
+}
+
+span.progress {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  background: #326666;
+  transition: all .3s;
+}
+
+.crossOutButton{
+  position: relative;
+  left: 1300px;
+  top: -20px;
+  border-radius: 50%;
+   height: 32px;
+   width: 32px;
+   font-size:20px;
+   border: none;
+   background: darkgray;
+   transition: 0.4s all;
+   &:hover{
+    background: lightgray;
+   }
+}
